@@ -56,7 +56,7 @@ VALUES (1, 1, CURRENT_TIMESTAMP, 13);
 /* Add books to BOOK_LOAN 1 */
 INSERT into book_loan_book (book_loan_id, book_id)
 VALUES (1,1),
-	  (1,4),
+       (1,4),
        (1,9);
 
 /* Debug output after data load */
