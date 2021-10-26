@@ -29,7 +29,7 @@ show create trigger csc785_mills_prj8_libmgmtsys.book_loan_book_before_insert;
 SELECT l.name librarian_name, p.name patron_name, loan_date, duration, DATE_ADD(loan_date, INTERVAL duration DAY) due_date, b.title book_title
 FROM csc785_mills_prj8_libmgmtsys.book_loan bl, csc785_mills_prj8_libmgmtsys.librarian l, csc785_mills_prj8_libmgmtsys.patron p, csc785_mills_prj8_libmgmtsys.book_loan_book blb, csc785_mills_prj8_libmgmtsys.book b
 WHERE bl.librarian_id = l.id
-	AND bl.patron_id = p.id
+    AND bl.patron_id = p.id
     AND bl.id = blb.book_loan_id
     AND blb.book_id = b.id;
 
