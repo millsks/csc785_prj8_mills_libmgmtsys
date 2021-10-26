@@ -31,9 +31,9 @@ show create trigger book_loan_book_before_insert;
 SELECT l.name librarian_name, p.name patron_name, loan_date, duration, DATE_ADD(loan_date, INTERVAL duration DAY) due_date, b.title book_title
 FROM book_loan bl, librarian l, patron p, book_loan_book blb, book b
 WHERE bl.librarian_id = l.id
-    AND bl.patron_id = p.id
-    AND bl.id = blb.book_loan_id
-    AND blb.book_id = b.id;
+  AND bl.patron_id = p.id
+  AND bl.id = blb.book_loan_id
+  AND blb.book_id = b.id;
 
 /* Try to insert a book_loan entry for a 14 day checkout period with librarian that is a student and has a limit of a 7 day checkout period. */
 /* This should error out. */
