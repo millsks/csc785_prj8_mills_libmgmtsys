@@ -58,11 +58,11 @@ INSERT INTO book_loan (librarian_id, patron_id, loan_date, duration)
 VALUES (1, 1, CURRENT_TIMESTAMP, 7);
 
 /* Update the fine entry wiht a paid_date */
-update fine set paid_date = CURRENT_TIMESTAMP where book_loan_id = 1;
+UPDATE fine SET paid_date = CURRENT_TIMESTAMP WHERE book_loan_id = 1;
 
 /* This should work now because the fine was paid. */
 INSERT INTO book_loan (librarian_id, patron_id, loan_date, duration)
 VALUES (1, 1, CURRENT_TIMESTAMP, 7);
 
 /* Get all books where the Author's name starts with John and the title does not contain the word The */
-select * from book where author like '%John%' and title not like '%The%' order by title, author;
+SELECT * FROM book WHERE author LIKE '%John%' AND title NOT LIKE '%The%' ORDER BY title, author;
